@@ -1,0 +1,58 @@
+scrapy crawl dmoz -o items.json
+scrapy crawl douban -o items.json
+scrapy crawl douban -o itemstest.json
+scrapy crawl doubanurl -o itemstest.json
+scrapy crawl doubanurl -o abnormal_baidu_jump_url.json
+scrapy crawl douban -o abnormal_items.json
+scrapy crawl mtime -o test.json
+
+原来的json里面没有，或者不完整要的东西：
+资源标题（原来的标题里面抓不到预告片这几个字）
+ '//title/text()'
+加勒比海盗5：死无对证(英语版)
+
+标签 movie_tags（原来的标签不完整）
+ '//div[@class="video_tags _video_tags"]//a/text()'
+"美国", "2018", "动作", "冒险", "科幻", "奇幻", "院线"
+
+关键字 keywords
+'//meta[@name="keywords"]/attribute::content'
+加勒比海盗：恶灵启航,加勒比海盗 神鬼奇航：死无对证,加勒比海盗5：亡灵的缄默,加勒比海盗5：亡者无言,加勒比海盗5：死人不会告密,加勒比海盗5：亡灵崛起,加勒比海盗5,约翰尼·德普,卡雅·斯考达里奥,布伦顿·思韦茨,电影
+
+出版日期 datePublished
+2017-05-26
+
+出版地 contentLocation
+美国 type="text/javascript"
+
+豆瓣,IMBD,M网站的评分 douban_IMBD_M_score
+"7.8", "6.7", "7.2"
+
+观众支持率 support_rate
+74%
+
+播放量  total_play_times
+1.7亿次
+
+
+包含一些控制字段和影片信息的声明 information
+'//script[@type="text/javascript"]/attribute::content'
+这里面可以提取出：（不过这个提取比较麻烦）
+别名：杰克船长血战亡灵舰队
+腾讯自动推荐的影片标签： 世界影史票房排行榜+值得二刷的美国影片+豆瓣电影口碑榜+感动与震撼 难以忘怀影视+高口碑高质量的冷门佳片+和女友一起看的电影
+系列名：加勒比海盗
+其他控制字段："recommend_episodes_icon":null,"keyword":null,"view_all_count":173827317,"movie_comment_set":1047774,"doulist_id":"1274560+1276354+30299+39554749+4097053+43881838","copyright_id":223,………………
+……………………………………………………………………………………………………………………………………………………………………………………
+var COVER_INFO = {"id":"00jxecd5him5kmn","typeid":1,"pre_play_plats_id":null,"publish_date":"2017-05-26","langue":"英语","plid":"edaex4z0","real_exclusive":"0","brief":"","leading_actor_id":["77549","72489","221353","75679","84032"],"current_num":0,"payfree_num":null,"recommend_episodes":null,"clips_ids":["h0397ez102x","s03879a6ekn","t05044kcdur","w0505sgml02","z0504spl8yf","q05086dvru7","h050322znld","m03337f7tjo","e03952eznuj","m0380uv7gzv","v0504xipvdo","w0397o1uxrn","r0505l123vp","v050559ixee","j0505wd3uo9","m0504i9109l","d0394ax5b8m","a03724ocwvn","s0381eq9780","b05033f83yb","v05035qtq1m","q05028fx5g7","i0389gg927l","i03903b4dck","p0393w74kac","j03944oeue9","n0395enq4q0","s0394b2k6b1","u03967jknoj","e0397jkxve3","a0397xgoz9f","x0398inbyk6","j0399gfytvq","n0399z6jt6u","w0399tvay9u","o039943q406","l0399wzszdf","d05003tkbif","a050017yfkd","p0501ee9anq","y0501ihgbti","m05042ywqhh","t0504rbv63h","g0505act7zl","a050501kgnb","h0505ftv63x","p0505x471dz","h0506q61rkb","m05067k22ii","x0505cubmyb","q05056xxx6z","i05077cbkxy","u0507okf5c3","f0506ymcvdv","s0507104ymj","v0507bbhpvg","n05075e45z0"],"pc_vip_pull_expire":null,"positive_view_today_count":1859,"is_commodity_shelves_name":null,"web20_imgtag":"{\"tag_1\":{\"id\":\"-1\",\"param\":\"\",\"param2\":\"\",\"text\":\"\"},\"tag_2\":{\"id\":\"20005\",\"param\":\"http://i.gtimg.cn/qqlive/images/mark/mark_5.png\",\"param2\":\"\",\"text\":\"VIP\"},\"tag_3\":{\"id\":\"-1\",\"param\":\"\",\"param2\":\"\",\"text\":\"\"},\"tag_4\":{\"id\":\"40003\",\"param\":\"mark_sd\",\"param2\":\"\",\"text\":\"蓝光\"}}","area":8,"type_name":"电影","tag":[],"emotion_ids":null,"horizontal_pic_url":"http://i.gtimg.cn/qqlive/img/jpgcache/files/qqvideo/hori/0/00jxecd5him5kmn.jpg","mtime_score":null,"type":1,"update_desc":"","title":"加勒比海盗5：死无对证","leading_actor":["约翰尼·德普","卡雅·斯考达里奥","布伦顿·思韦茨","杰弗里·拉什","哈维尔·巴登"],"vip_ids":[{"F":7,"V":"v0024zl735r"},{"F":7,"V":"u0024z6unec"}],"comment_show_type":1,"alias":["加勒比海盗：恶灵启航","加勒比海盗 神鬼奇航：死无对证","加勒比海盗5：亡灵的缄默","加勒比海盗5：亡者无言","加勒比海盗5：死人不会告密","加勒比海盗5：亡灵崛起","加勒比海盗5"],"current_topic":null,"second_title":"杰克船长血战亡灵舰队","positive_trailer":1,"video_ids":["v0024zl735r","u0024z6unec"],"series_id":"seriessnjdvmm4sz","series_num":"5","c_tips_cid_conf":null,"area_id":"153560+","downright":[],"category_map":[10139,"正片",1037,"电影",1,"电影"],"is_trailer":0,"hollywood_online":"2017-09-15 00:00:53","subtype":["动作","奇幻","冒险","院线"],"main_genre":"动作","area_name":"美国","outsite_flag":0,"view_today_count":2743,"pc_vip_pull_text":null,"doulie_tags":"世界影史票房排行榜+值得二刷的美国影片+豆瓣电影口碑榜+感动与震撼 难以忘怀影视+高口碑高质量的冷门佳片+和女友一起看的电影","series_name":"加勒比海盗","free_end_time":null,"vertical_pic_url":"http://i.gtimg.cn/qqlive/img/jpgcache/files/qqvideo/0/00jxecd5him5kmn.jpg","list_show_style":null,"pre_play_timepoint":null,"data_checkup_grade":4,"costar_id":["73253","76215","74902","73183","83752","71718","72049"],"prompt_text":"","positive_view_all_count":85517248,"cover_checkup_grade":4,"pre_play_timelong_id":null,"column_id":0,"free_begin_time":null,"free_for_platform_id":null,"rank_group_id":null,"douban_score":"7.2","digital_mode":194711,"year":"2017","director_id":["83452","85914"],"title_en":"Pirates of the Caribbean: Dead Men Tell No Tales","description":"故事发生在《加勒比海盗3：世界的尽头》沉船湾之战20年后。 亡灵萨拉查船长（哈维尔·巴登 Javier Bardem 饰）率领自己的亡灵海军杀出了世界的尽头，“深海阎王”威尔·特纳（奥兰多·布鲁姆 Orlando Bloom 饰）乘飞翔的荷兰人号前来追杀却被其引入百慕大三角生死未卜。 获取自由的萨拉查肆虐加勒比海，征服了整个海域，即便是手刃了“黑胡子”爱德华·蒂奇（伊恩·麦柯肖恩 Ian McShane 饰）的海盗王赫克托·巴博萨船长（杰弗里·拉什 Geoffrey Rush 饰）也难以避免心爱的安妮女王复仇号沉入大海的惨剧。 幸存下来的巴博萨在女巫Haifaa Meni(格什菲·法拉哈尼 Golshifteh Farahani 饰)口中得知了萨拉查的真实目的：为寻找他的宿敌杰克船长（约翰尼·德普 Johnny Depp 饰），遂重返皇家海军，展开了复仇旅程。 而在父亲蒂格船长（基思·理查兹 Keith Richards 饰）指引下，杰克也将乘着失而复得的黑珍珠号再次扬帆起航，率领聪明美丽的天文学家卡琳娜·史密斯（卡雅·斯考达里奥 Kaya Scodelario 饰）以及与威尔·特纳有着神秘联系的年轻皇家海军亨利（布兰顿·思怀兹 Brenton Thwaites 饰），一起去寻找唯一有可能击败萨拉查的宝物：传说中海神波塞冬的三叉戟。 加勒比的碧海之上将会燃起前所未见的硝烟。","cover_id":"00jxecd5him5kmn","pay_status":5,"playright":["1","2","3","4","5","8","9","10","18","20","40","57","61"],"recommend_episodes_icon":null,"keyword":null,"view_all_count":173827317,"movie_comment_set":1047774,"doulist_id":"1274560+1276354+30299+39554749+4097053+43881838","copyright_id":223,"new_pic_hz":"http://puui.qpic.cn/vcover_hz_pic/0/00jxecd5him5kmn1554188613/0","imdb_score":"7.0","pc_vip_pull_url":null,"episode_all":null,"episode_updated":null,"director":["乔阿吉姆·罗恩尼","艾斯彭·山德伯格"],"nomal_ids":[{"F":7,"V":"v0024zl735r","E":1},{"F":7,"V":"u0024z6unec","E":2}],"score":{"c_mix_score":"8.4","hot":"9.85239","score":"8.4"},"sub_genre":["奇幻","冒险","院线"],"data_flag":3932416,"vipPage":true,"hasVplusRank":false,"urlHasVid":false,"payInfo":{"c_status":5,"c_vip_price":0,"c_single_price":500,"c_discount":0},"theme":{},"commentId":{"comment_id":"1559713085","result":{"code":0,"msg":"Success!","ret":0},"srcid":"00jxecd5him5kmn","srcid_type":1003},"sellPoint":{"iError":0,"strMsg":"","iDoubanHighScoreFlag":0,"iWeiboHotCmtFlag":0,"stWeiboHotCmt":{"strTitle":"","strContent":""},"iGoldenHorseAwardFlag":0},"yearAndArea":{"areaUrl":"//v.qq.com/x/list/movie?offset=0&area=100029","yearUrl":"//v.qq.com/x/list/movie?offset=0&year=2017"}}
+var COLUMN_INFO = {}
+var VIP_INFO = {
+    episodeCurrent: parseInt("2", 10),
+    episodeVip: parseInt("2", 10)
+}
+var VIDEO_INFO = {"publish_date":"2010-01-01 00:00:00","leading_actor_id":["77549","72489","221353","75679","84032"],"duration":"7433","guests":null,"race_teams_id":null,"type_name":"电影","tag":[],"singer_id":null,"episode":"0","race_stars_id":null,"srcsite_name":"","type":1,"title":"加勒比海盗5：死无对证(英语版)","leading_actor":["约翰尼·德普","卡雅·斯考达里奥","布伦顿·思韦茨","杰弗里·拉什","哈维尔·巴登"],"show_type":"1","singer_name":null,"danmu_status":0,"second_title":"","positive_trailer":1,"athlete":null,"mv_stars":null,"trytime_second":"300","c_full":0,"update_flag":null,"first_recommand":null,"desc":"杰克船长血战亡灵舰队","pioneer_tag":"动作+奇幻+冒险+院线+美国+约翰尼·德普+卡雅·斯考达里奥+布伦顿·思韦茨+杰弗里·拉什+哈维尔·巴登","begin_time":"0","upload_qq":"2854196112","category_map":[10139,"正片",1037,"电影",1,"电影"],"is_trailer":0,"stars_name":null,"pic_640_360":"http://puui.qpic.cn/vpic/0/v0024zl735r.png/0","c_title_segment":"0|0","guests_id":null,"presenter_id":null,"upload_src":"20","athlete_id":null,"sec_recommand":null,"costar_id":null,"relative_stars_id":null,"relative_stars":null,"drm":1,"modify_time":"2019-03-08 20:58:34","tail_time":0,"valid_tag_id":"","vid":"v0024zl735r","pic_url":"","costar":null,"race_teams_name":null,"c_title_output":"加勒比海盗5：死无对证(英语版)","director_id":["83452","85914"],"title_en":null,"stars":null,"danmu":1,"mv_stars_id":null,"playright":["1","2","3","4","5","8","9","10","18","20","40","57","61"],"presenter":null,"race_stars":null,"view_all_count":67205768,"c_tags_flag":1,"c_has_adv_danmu":null,"head_time":0,"state":4,"copyright_id":"223","pic160x90":"http://puui.qpic.cn/vpic/0/v0024zl735r_160_90_3.jpg/0","director":["乔阿吉姆·罗恩尼","艾斯彭·山德伯格"],"famous_id":null,"pioneer_tag_ids":"","trytime":"1306030","famous_actor":null,"video_checkup_time":"2017-09-14 23:11:48","":null,"isFull":true}
+……………………………………………………………………………………………………………………………………………………………………
+
+
+原json里面有 影片的 演员 导演编剧 简介 语言 类型 影片时长 电影别名 中英文标题 季数 更新时间 等等一些控制字段
+{"_id":{"$oid":"5959e36a71f65b088b22643a"},"coverId":"00jxecd5him5kmn","regionIds":["9-02001-09b2a7a32b3c8db1"],"regions":["美国"],"cates":["动作"],"cateIds":["9-01001-dec9b2761fe9f1aa"],"tags":[],"year":"2017","title":"加勒比海盗5：死无对证","etitle":["jlbhd5swdz","jlbhd5smdz"],"enTitle":"Pirates of the Caribbean: Dead Men Tell No Tales","alias":["加勒比海盗：恶灵启航","加勒比海盗 神鬼奇航：死无对证","加勒比海盗5：亡灵的缄默","加勒比海盗5：亡者无言","加勒比海盗5：死人不会告密","加勒比海盗5：亡灵崛起","加勒比海盗5"],"summarys":"故事发生在《加勒比海盗3：世界的尽头》沉船湾之战20年后。 亡灵萨拉查船长（哈维尔·巴登 Javier Bardem 饰）率领自己的亡灵海军杀出了世界的尽头，“深海阎王”威尔·特纳（奥兰多·布鲁姆 Orlando Bloom 饰）乘飞翔的荷兰人号前来追杀却被其引入百慕大三角生死未卜。 获取自由的萨拉查肆虐加勒比海，征服了整个海域，即便是手刃了“黑胡子”爱德华·蒂奇（伊恩·麦柯肖恩 Ian McShane 饰）的海盗王赫克托·巴博萨船长（杰弗里·拉什 Geoffrey Rush 饰）也难以避免心爱的安妮女王复仇号沉入大海的惨剧。 幸存下来的巴博萨在女巫Haifaa Meni(格什菲·法拉哈尼 Golshifteh Farahani 饰)口中得知了萨拉查的真实目的：为寻找他的宿敌杰克船长（约翰尼·德普 Johnny Depp 饰），遂重返皇家海军，展开了复仇旅程。 而在父亲蒂格船长（基思·理查兹 Keith Richards 饰）指引下，杰克也将乘着失而复得的黑珍珠号再次扬帆起航，率领聪明美丽的天文学家卡琳娜·史密斯（卡雅·斯考达里奥 Kaya Scodelario 饰）以及与威尔·特纳有着神秘联系的年轻皇家海军亨利（布兰顿·思怀兹 Brenton Thwaites 饰），一起去寻找唯一有可能击败萨拉查的宝物：传说中海神波塞冬的三叉戟。 加勒比的碧海之上将会燃起前所未见的硝烟。","brief":"","directors":["乔阿吉姆·罗恩尼","艾斯彭·山德伯格"],"actors":["约翰尼·德普","卡雅·斯考达里奥","布伦顿·思韦茨","杰弗里·拉什","哈维尔·巴登"],"publishTime":"2017-05-26","duration":"123m53s","pictureUrl":"http://i.gtimg.cn/qqlive/img/jpgcache/files/qqvideo/0/00jxecd5him5kmn.jpg","quality":4,"isPay":5,"language":"英语","contentType":1,"setCount":0,"lastUpdateSet":0,"producted":"","detailUrl":"","operateStatus":1,"score":"8.6","sourceId":9,"updateTime":"2019-02-11 11:35:35","assemble":"","params":"cover_id=00jxecd5him5kmn|version=1|episode_idx=-1|channel_code=1|video_id=|video_name=加勒比海盗5：死无对证|topic_id=|showtype=100","lastUpdateTime":"2019-02-11 12:40:00","releaseTime":"2017-07-03 14:25:46","grabTime":"2019-02-11 12:40:00","isLast":1,"columnId":"0","mergeTime":"2018-09-03 02:31:59","horizontalPicUrl":"http://i.gtimg.cn/qqlive/img/jpgcache/files/qqvideo/hori/0/00jxecd5him5kmn.jpg","season":"5","mergeStatus":1}
+
